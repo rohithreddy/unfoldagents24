@@ -7,6 +7,9 @@ import { useScrollToBottom } from "@/hooks/use-scroll-to-bottom";
 import { ToolInvocation } from "ai";
 import { useChat } from "ai/react";
 import { toast } from "sonner";
+import { useCallback, ChangeEvent } from "react";
+import ChatInput from "@/components/ChatInput";
+import SendSvg from "@/components/SendSvg";
 
 export function Chat() {
   const chatId = "001";
@@ -34,6 +37,19 @@ export function Chat() {
   const [messagesContainerRef, messagesEndRef] =
     useScrollToBottom<HTMLDivElement>();
 
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      handleSubmit(e);
+    }
+  };
+
+  const handleInputChange = useCallback(
+    (e: ChangeEvent<HTMLTextAreaElement>) => {
+      setInput(e.target.value);
+    },
+    [setInput]
+  );
+
   return (
     <div className="flex flex-col min-w-0 h-[calc(100dvh-52px)] bg-background">
       <div
@@ -60,20 +76,15 @@ export function Chat() {
           className="shrink-0 min-w-[24px] min-h-[24px]"
         />
       </div>
-
-      <form className="flex mx-auto px-4 bg-background pb-4 md:pb-6 gap-2 w-full md:max-w-3xl">
-        <MultimodalInput
-          chatId={chatId}
-          input={input}
-          setInput={setInput}
-          handleSubmit={handleSubmit}
-          isLoading={isLoading}
-          stop={stop}
-          messages={messages}
-          setMessages={setMessages}
-          append={append}
-        />
-      </form>
+      <div className="container p-20">
+      <ChatInput
+        handleSubmit={handleSubmit}
+        userInput={input}
+        setUserInput={setInput}
+        handleKeyPress={handleKeyPress}
+        disabled={isLoading}
+      />
+      </div>
     </div>
   );
 }

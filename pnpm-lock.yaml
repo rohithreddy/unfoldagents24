@@ -25,7 +25,7 @@ importers:
         version: 18.2.4
       '@vercel/analytics':
         specifier: ^1.3.1
-        version: 1.3.1(next@13.4.4)(react@18.2.0)
+        version: 1.3.1(next@13.4.4(@opentelemetry/api@1.9.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0)
       '@vercel/kv':
         specifier: ^2.0.0
         version: 2.0.0
@@ -55,16 +55,16 @@ importers:
         version: 13.4.4(eslint@8.41.0)(typescript@5.0.4)
       framer-motion:
         specifier: ^11.11.17
-        version: 11.11.17(react-dom@18.2.0)(react@18.2.0)
+        version: 11.11.17(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       geist:
         specifier: ^1.3.1
-        version: 1.3.1(next@13.4.4)
+        version: 1.3.1(next@13.4.4(@opentelemetry/api@1.9.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))
       lucide-react:
         specifier: ^0.460.0
         version: 0.460.0(react@18.2.0)
       next:
         specifier: 13.4.4
-        version: 13.4.4(react-dom@18.2.0)(react@18.2.0)
+        version: 13.4.4(@opentelemetry/api@1.9.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       postcss:
         specifier: 8.4.23
         version: 8.4.23
@@ -82,7 +82,7 @@ importers:
         version: 4.0.0
       sonner:
         specifier: ^1.5.0
-        version: 1.5.0(react-dom@18.2.0)(react@18.2.0)
+        version: 1.5.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       tailwind-merge:
         specifier: ^2.5.4
         version: 2.5.4
@@ -2211,6 +2211,7 @@ snapshots:
       eventsource-parser: 1.1.2
       nanoid: 3.3.6
       secure-json-parse: 2.7.0
+    optionalDependencies:
       zod: 3.23.8
 
   '@ai-sdk/provider-utils@2.0.1(zod@3.23.8)':
@@ -2219,6 +2220,7 @@ snapshots:
       eventsource-parser: 3.0.0
       nanoid: 3.3.7
       secure-json-parse: 2.7.0
+    optionalDependencies:
       zod: 3.23.8
 
   '@ai-sdk/provider@0.0.14':
@@ -2233,23 +2235,26 @@ snapshots:
     dependencies:
       '@ai-sdk/provider-utils': 2.0.1(zod@3.23.8)
       '@ai-sdk/ui-utils': 1.0.1(zod@3.23.8)
-      react: 18.2.0
       swr: 2.2.5(react@18.2.0)
       throttleit: 2.1.0
+    optionalDependencies:
+      react: 18.2.0
       zod: 3.23.8
 
   '@ai-sdk/ui-utils@0.0.20(zod@3.23.8)':
     dependencies:
       '@ai-sdk/provider-utils': 1.0.5(zod@3.23.8)
       secure-json-parse: 2.7.0
+    optionalDependencies:
       zod: 3.23.8
 
   '@ai-sdk/ui-utils@1.0.1(zod@3.23.8)':
     dependencies:
       '@ai-sdk/provider': 1.0.0
       '@ai-sdk/provider-utils': 2.0.1(zod@3.23.8)
-      zod: 3.23.8
       zod-to-json-schema: 3.23.5(zod@3.23.8)
+    optionalDependencies:
+      zod: 3.23.8
 
   '@alloc/quick-lru@5.2.0': {}
 
@@ -2370,14 +2375,16 @@ snapshots:
 
   '@radix-ui/react-compose-refs@1.1.0(@types/react@18.2.7)(react@18.2.0)':
     dependencies:
-      '@types/react': 18.2.7
       react: 18.2.0
+    optionalDependencies:
+      '@types/react': 18.2.7
 
   '@radix-ui/react-slot@1.1.0(@types/react@18.2.7)(react@18.2.0)':
     dependencies:
       '@radix-ui/react-compose-refs': 1.1.0(@types/react@18.2.7)(react@18.2.0)
-      '@types/react': 18.2.7
       react: 18.2.0
+    optionalDependencies:
+      '@types/react': 18.2.7
 
   '@rushstack/eslint-patch@1.10.3': {}
 
@@ -2436,6 +2443,7 @@ snapshots:
       '@typescript-eslint/typescript-estree': 5.62.0(typescript@5.0.4)
       debug: 4.3.5
       eslint: 8.41.0
+    optionalDependencies:
       typescript: 5.0.4
     transitivePeerDependencies:
       - supports-color
@@ -2456,6 +2464,7 @@ snapshots:
       is-glob: 4.0.3
       semver: 7.6.3
       tsutils: 3.21.0(typescript@5.0.4)
+    optionalDependencies:
       typescript: 5.0.4
     transitivePeerDependencies:
       - supports-color
@@ -2471,11 +2480,12 @@ snapshots:
     dependencies:
       crypto-js: 4.2.0
 
-  '@vercel/analytics@1.3.1(next@13.4.4)(react@18.2.0)':
+  '@vercel/analytics@1.3.1(next@13.4.4(@opentelemetry/api@1.9.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0)':
     dependencies:
-      next: 13.4.4(react-dom@18.2.0)(react@18.2.0)
-      react: 18.2.0
       server-only: 0.0.1
+    optionalDependencies:
+      next: 13.4.4(@opentelemetry/api@1.9.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      react: 18.2.0
 
   '@vercel/kv@2.0.0':
     dependencies:
@@ -2495,9 +2505,10 @@ snapshots:
       '@ai-sdk/ui-utils': 1.0.1(zod@3.23.8)
       '@opentelemetry/api': 1.9.0
       jsondiffpatch: 0.6.0
+      zod-to-json-schema: 3.23.5(zod@3.23.8)
+    optionalDependencies:
       react: 18.2.0
       zod: 3.23.8
-      zod-to-json-schema: 3.23.5(zod@3.23.8)
 
   ajv@6.12.6:
     dependencies:
@@ -2972,11 +2983,12 @@ snapshots:
       '@typescript-eslint/parser': 5.62.0(eslint@8.41.0)(typescript@5.0.4)
       eslint: 8.41.0
       eslint-import-resolver-node: 0.3.9
-      eslint-import-resolver-typescript: 3.6.1(@typescript-eslint/parser@5.62.0)(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1)(eslint@8.41.0)
-      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@5.62.0)(eslint-import-resolver-typescript@3.6.1)(eslint@8.41.0)
+      eslint-import-resolver-typescript: 3.6.1(@typescript-eslint/parser@5.62.0(eslint@8.41.0)(typescript@5.0.4))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(eslint@8.41.0))(eslint@8.41.0)
+      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@5.62.0(eslint@8.41.0)(typescript@5.0.4))(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@5.62.0(eslint@8.41.0)(typescript@5.0.4))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(eslint@8.41.0))(eslint@8.41.0))(eslint@8.41.0)
       eslint-plugin-jsx-a11y: 6.9.0(eslint@8.41.0)
       eslint-plugin-react: 7.35.0(eslint@8.41.0)
       eslint-plugin-react-hooks: 4.6.2(eslint@8.41.0)
+    optionalDependencies:
       typescript: 5.0.4
     transitivePeerDependencies:
       - eslint-import-resolver-webpack
@@ -2990,13 +3002,13 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@5.62.0)(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1)(eslint@8.41.0):
+  eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@5.62.0(eslint@8.41.0)(typescript@5.0.4))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(eslint@8.41.0))(eslint@8.41.0):
     dependencies:
       debug: 4.3.5
       enhanced-resolve: 5.17.1
       eslint: 8.41.0
-      eslint-module-utils: 2.8.1(@typescript-eslint/parser@5.62.0)(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1)(eslint@8.41.0)
-      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@5.62.0)(eslint-import-resolver-typescript@3.6.1)(eslint@8.41.0)
+      eslint-module-utils: 2.8.1(@typescript-eslint/parser@5.62.0(eslint@8.41.0)(typescript@5.0.4))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@5.62.0(eslint@8.41.0)(typescript@5.0.4))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(eslint@8.41.0))(eslint@8.41.0))(eslint@8.41.0)
+      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@5.62.0(eslint@8.41.0)(typescript@5.0.4))(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@5.62.0(eslint@8.41.0)(typescript@5.0.4))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(eslint@8.41.0))(eslint@8.41.0))(eslint@8.41.0)
       fast-glob: 3.3.2
       get-tsconfig: 4.7.6
       is-core-module: 2.15.0
@@ -3007,19 +3019,19 @@ snapshots:
       - eslint-import-resolver-webpack
       - supports-color
 
-  eslint-module-utils@2.8.1(@typescript-eslint/parser@5.62.0)(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1)(eslint@8.41.0):
+  eslint-module-utils@2.8.1(@typescript-eslint/parser@5.62.0(eslint@8.41.0)(typescript@5.0.4))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@5.62.0(eslint@8.41.0)(typescript@5.0.4))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(eslint@8.41.0))(eslint@8.41.0))(eslint@8.41.0):
     dependencies:
-      '@typescript-eslint/parser': 5.62.0(eslint@8.41.0)(typescript@5.0.4)
       debug: 3.2.7
+    optionalDependencies:
+      '@typescript-eslint/parser': 5.62.0(eslint@8.41.0)(typescript@5.0.4)
       eslint: 8.41.0
       eslint-import-resolver-node: 0.3.9
-      eslint-import-resolver-typescript: 3.6.1(@typescript-eslint/parser@5.62.0)(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1)(eslint@8.41.0)
+      eslint-import-resolver-typescript: 3.6.1(@typescript-eslint/parser@5.62.0(eslint@8.41.0)(typescript@5.0.4))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(eslint@8.41.0))(eslint@8.41.0)
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-import@2.29.1(@typescript-eslint/parser@5.62.0)(eslint-import-resolver-typescript@3.6.1)(eslint@8.41.0):
+  eslint-plugin-import@2.29.1(@typescript-eslint/parser@5.62.0(eslint@8.41.0)(typescript@5.0.4))(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@5.62.0(eslint@8.41.0)(typescript@5.0.4))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(eslint@8.41.0))(eslint@8.41.0))(eslint@8.41.0):
     dependencies:
-      '@typescript-eslint/parser': 5.62.0(eslint@8.41.0)(typescript@5.0.4)
       array-includes: 3.1.8
       array.prototype.findlastindex: 1.2.5
       array.prototype.flat: 1.3.2
@@ -3028,7 +3040,7 @@ snapshots:
       doctrine: 2.1.0
       eslint: 8.41.0
       eslint-import-resolver-node: 0.3.9
-      eslint-module-utils: 2.8.1(@typescript-eslint/parser@5.62.0)(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1)(eslint@8.41.0)
+      eslint-module-utils: 2.8.1(@typescript-eslint/parser@5.62.0(eslint@8.41.0)(typescript@5.0.4))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@5.62.0(eslint@8.41.0)(typescript@5.0.4))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.29.1(eslint@8.41.0))(eslint@8.41.0))(eslint@8.41.0)
       hasown: 2.0.2
       is-core-module: 2.15.0
       is-glob: 4.0.3
@@ -3038,6 +3050,8 @@ snapshots:
       object.values: 1.2.0
       semver: 6.3.1
       tsconfig-paths: 3.15.0
+    optionalDependencies:
+      '@typescript-eslint/parser': 5.62.0(eslint@8.41.0)(typescript@5.0.4)
     transitivePeerDependencies:
       - eslint-import-resolver-typescript
       - eslint-import-resolver-webpack
@@ -3216,11 +3230,12 @@ snapshots:
 
   fraction.js@4.3.7: {}
 
-  framer-motion@11.11.17(react-dom@18.2.0)(react@18.2.0):
+  framer-motion@11.11.17(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
     dependencies:
+      tslib: 2.6.3
+    optionalDependencies:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
-      tslib: 2.6.3
 
   fs.realpath@1.0.0: {}
 
@@ -3238,9 +3253,9 @@ snapshots:
 
   functions-have-names@1.2.3: {}
 
-  geist@1.3.1(next@13.4.4):
+  geist@1.3.1(next@13.4.4(@opentelemetry/api@1.9.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)):
     dependencies:
-      next: 13.4.4(react-dom@18.2.0)(react@18.2.0)
+      next: 13.4.4(@opentelemetry/api@1.9.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
 
   get-caller-file@2.0.5: {}
 
@@ -3989,7 +4004,7 @@ snapshots:
 
   natural-compare@1.4.0: {}
 
-  next@13.4.4(react-dom@18.2.0)(react@18.2.0):
+  next@13.4.4(@opentelemetry/api@1.9.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
     dependencies:
       '@next/env': 13.4.4
       '@swc/helpers': 0.5.1
@@ -4010,6 +4025,7 @@ snapshots:
       '@next/swc-win32-arm64-msvc': 13.4.4
       '@next/swc-win32-ia32-msvc': 13.4.4
       '@next/swc-win32-x64-msvc': 13.4.4
+      '@opentelemetry/api': 1.9.0
     transitivePeerDependencies:
       - '@babel/core'
       - babel-plugin-macros
@@ -4145,8 +4161,9 @@ snapshots:
   postcss-load-config@4.0.2(postcss@8.4.49):
     dependencies:
       lilconfig: 3.1.2
-      postcss: 8.4.49
       yaml: 2.5.0
+    optionalDependencies:
+      postcss: 8.4.49
 
   postcss-nested@6.2.0(postcss@8.4.49):
     dependencies:
@@ -4374,7 +4391,7 @@ snapshots:
 
   slash@3.0.0: {}
 
-  sonner@1.5.0(react-dom@18.2.0)(react@18.2.0):
+  sonner@1.5.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
     dependencies:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
