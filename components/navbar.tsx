@@ -14,7 +14,7 @@ export const Navbar = () => {
       </h2>
       </aside>
       <aside>
-      <Link href="https://github.com/vercel-labs/ai-sdk-preview-python-streaming">
+      <Link href="https://github.com/rohithreddy/unfoldagents24">
         <Button variant="outline">
           <GitIcon /> View Source Code
         </Button>

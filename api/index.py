@@ -9,7 +9,7 @@ from fastapi.responses import StreamingResponse
 from openai import OpenAI
 from .utils.prompt import ClientMessage, convert_to_openai_messages
 from .utils.tools import get_current_weather
-
+from .chatbot import initialize_agent
 
 load_dotenv(".env.local")
 
@@ -28,34 +28,12 @@ available_tools = {
     "get_current_weather": get_current_weather,
 }
 
-def do_stream(messages: List[ChatCompletionMessageParam]):
-    stream = client.chat.completions.create(
-        messages=messages,
-        model="gpt-4o-mini",
-        stream=True,
-        tools=[{
-            "type": "function",
-            "function": {
-                "name": "get_current_weather",
-                "description": "Get the current weather at a location",
-                "parameters": {
-                    "type": "object",
-                    "properties": {
-                        "latitude": {
-                            "type": "number",
-                            "description": "The latitude of the location",
-                        },
-                        "longitude": {
-                            "type": "number",
-                            "description": "The longitude of the location",
-                        },
-                    },
-                    "required": ["latitude", "longitude"],
-                },
-            },
-        }]
-    )
+agent_executor, config = initialize_agent()
 
+def do_stream(messages: List[ChatCompletionMessageParam]):
+    stream = agent_executor.stream(
+        {"messages": messages}, config
+    )
     return stream
 
 def stream_text(messages: List[ChatCompletionMessageParam], protocol: str = 'data'):
